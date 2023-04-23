@@ -1,4 +1,5 @@
 const {Client} = require('pg');
+require('dotenv').config({path: '../../.env'});
 
 const CATEGORIES = [
     {
