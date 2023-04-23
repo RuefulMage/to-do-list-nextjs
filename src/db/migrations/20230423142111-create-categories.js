@@ -13,7 +13,17 @@ module.exports = {
       name: {
         allowNull: false,
         type: Sequelize.STRING
-      }
+      },
+      createdAt: {
+        type: Sequelize.DATE,
+        allowNull: false,
+        defaultValue: Sequelize.literal('NOW()')
+      },
+      updatedAt: {
+        type: Sequelize.DATE,
+        allowNull: false,
+        defaultValue: Sequelize.literal('NOW()')
+      },
     });
   },
 
