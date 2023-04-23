@@ -1,4 +1,5 @@
-import sequelizeConf, {DataTypes, Model} from "sequelize";
+import {DataTypes, Model} from "sequelize";
+import sequelizeConf from "@/db/sequelize";
 
 class Category extends Model {
 }
@@ -18,4 +19,4 @@ Category.init({
         tableName: 'categories'
     });
 
-export {Category};
+export default Category;

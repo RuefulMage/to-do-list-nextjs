@@ -1,6 +1,6 @@
 import {DataTypes, Model} from "sequelize";
-import sequelizeConf from "../../../sequelize";
-import {Category} from "./category";
+import sequelizeConf from "../sequelize";
+import Category from "./category";
 
 class Task extends Model {}
 
@@ -24,11 +24,13 @@ Task.init({
     tableName: 'tasks'
 });
 
-Task.belongsTo(Category);
+Task.belongsTo(Category, {
+    foreignKey: 'categoryId'
+});
 Category.hasMany(Task, {
     sourceKey: 'id',
     foreignKey: 'categoryId',
     as: 'tasks'
 });
 
-export { Task };
+export default Task ;
