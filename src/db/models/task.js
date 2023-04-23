@@ -1,6 +1,6 @@
 import {DataTypes, Model} from "sequelize";
 import sequelizeConf from "../../../sequelize";
-import {Category} from "@/types/orm/Category";
+import {Category} from "./category";
 
 class Task extends Model {}
 
@@ -10,7 +10,7 @@ Task.init({
         autoIncrement: true,
         primaryKey: true,
     },
-    title: {
+    name: {
         type: DataTypes.STRING,
         allowNull: false
     },
@@ -30,4 +30,5 @@ Category.hasMany(Task, {
     foreignKey: 'categoryId',
     as: 'tasks'
 });
+
 export { Task };
